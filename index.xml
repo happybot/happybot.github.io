@@ -11,9 +11,9 @@
 &lt;p>除了保持第一行初始提交 pick 的状态不变,其他提交改成 s(squash)或者 f(fixup),这里我们删除掉所有的后续提交信息,选择用 f&lt;/p>
 &lt;p>vim 命令模式下输入&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> :2,$s/pick/f/g
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>将第二行开始的 pick 全部替换成 s.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>将第二行开始的 pick 全部替换成 f.&lt;/p>
 &lt;p>wq 保存后退出,执行.&lt;/p>
-&lt;p>最后提交变成一个.&lt;/p>
+&lt;p>提交压缩成了一个.&lt;/p>
 &lt;p>接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.&lt;/p>
 &lt;p>因为目前代码仓库比较特殊,只有一个初始提交,所有常规 reset &amp;ndash;soft 等方法将不好使.&lt;/p>
 &lt;p>这个时候使用&lt;/p>

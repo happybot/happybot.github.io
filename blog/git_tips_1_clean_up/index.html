@@ -12,9 +12,9 @@ git rebase -i --root
 除了保持第一行初始提交 pick 的状态不变,其他提交改成 s(squash)或者 f(fixup),这里我们删除掉所有的后续提交信息,选择用 f
 vim 命令模式下输入
  :2,$s/pick/f/g
-将第二行开始的 pick 全部替换成 s.
+将第二行开始的 pick 全部替换成 f.
 wq 保存后退出,执行.
-最后提交变成一个.
+提交压缩成了一个.
 接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.
 因为目前代码仓库比较特殊,只有一个初始提交,所有常规 reset &ndash;soft 等方法将不好使.
 这个时候使用
@@ -28,9 +28,9 @@ git branch masterarchive20250513 接着把大量的混乱提交全部干掉,压�
 git rebase -i --root 这个时候自动打开的编辑器(比如 vi),显示如下:
 除了保持第一行初始提交 pick 的状态不变,其他提交改成 s(squash)或者 f(fixup),这里我们删除掉所有的后续提交信息,选择用 f
 vim 命令模式下输入
-:2,$s/pick/f/g 将第二行开始的 pick 全部替换成 s.
+:2,$s/pick/f/g 将第二行开始的 pick 全部替换成 f.
 wq 保存后退出,执行.
-最后提交变成一个.
+提交压缩成了一个.
 接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.
 因为目前代码仓库比较特殊,只有一个初始提交,所有常规 reset –soft 等方法将不好使.
 这个时候使用
@@ -42,9 +42,9 @@ git branch masterarchive20250513 接着把大量的混乱提交全部干掉,压�
 git rebase -i --root 这个时候自动打开的编辑器(比如 vi),显示如下:
 除了保持第一行初始提交 pick 的状态不变,其他提交改成 s(squash)或者 f(fixup),这里我们删除掉所有的后续提交信息,选择用 f
 vim 命令模式下输入
-:2,$s/pick/f/g 将第二行开始的 pick 全部替换成 s.
+:2,$s/pick/f/g 将第二行开始的 pick 全部替换成 f.
 wq 保存后退出,执行.
-最后提交变成一个.
+提交压缩成了一个.
 接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.
 因为目前代码仓库比较特殊,只有一个初始提交,所有常规 reset –soft 等方法将不好使.
 这个时候使用
@@ -56,9 +56,9 @@ git branch masterarchive20250513 接着把大量的混乱提交全部干掉,压�
 git rebase -i --root 这个时候自动打开的编辑器(比如 vi),显示如下:
 除了保持第一行初始提交 pick 的状态不变,其他提交改成 s(squash)或者 f(fixup),这里我们删除掉所有的后续提交信息,选择用 f
 vim 命令模式下输入
-:2,$s/pick/f/g 将第二行开始的 pick 全部替换成 s.
+:2,$s/pick/f/g 将第二行开始的 pick 全部替换成 f.
 wq 保存后退出,执行.
-最后提交变成一个.
+提交压缩成了一个.
 接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.
 因为目前代码仓库比较特殊,只有一个初始提交,所有常规 reset –soft 等方法将不好使.
 这个时候使用
@@ -68,7 +68,7 @@ git rm -r --cached -- problems 来把 problems 整个目录从版本仓库和暂
 <a href=/favorite/>Favorite</a></nav></header><main><h1>git提交历史整理</h1><p><i><time datetime=2025-05-13 pubdate>13 May.</time></i></p><content><p>最近 CLion 对非商业使用免费了.在 cursor 的帮助下, 做了个 CLion 环境下(用 CMAK 管理) leetcode c 语言的题解框架 自用.</p><p>边做边摸索,今天大致成型.回头看到太多临时和凌乱的提交,想整理一把.</p><p><img src=/images/blogs/git_tips_1_1.png alt></p><p>首先是备份. git 的分支是零成本的,所以搞一个备份分支.注意我们这里是搞分支,不是切分支,不要无脑 checkout -b,用 branch 命令够了.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git branch masterarchive20250513
 </span></span></code></pre></div><p>接着把大量的混乱提交全部干掉,压缩到一个提交里面</p><p>使用一个凶残的命令</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git rebase -i --root
 </span></span></code></pre></div><p>这个时候自动打开的编辑器(比如 vi),显示如下:</p><p><img src=/images/blogs/git_tips_1_2.png alt></p><p>除了保持第一行初始提交 pick 的状态不变,其他提交改成 s(squash)或者 f(fixup),这里我们删除掉所有的后续提交信息,选择用 f</p><p>vim 命令模式下输入</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span> :2,$s/pick/f/g
-</span></span></code></pre></div><p>将第二行开始的 pick 全部替换成 s.</p><p>wq 保存后退出,执行.</p><p>最后提交变成一个.</p><p>接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.</p><p>因为目前代码仓库比较特殊,只有一个初始提交,所有常规 reset &ndash;soft 等方法将不好使.</p><p>这个时候使用</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git rm -r --cached -- problems
+</span></span></code></pre></div><p>将第二行开始的 pick 全部替换成 f.</p><p>wq 保存后退出,执行.</p><p>提交压缩成了一个.</p><p>接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.</p><p>因为目前代码仓库比较特殊,只有一个初始提交,所有常规 reset &ndash;soft 等方法将不好使.</p><p>这个时候使用</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git rm -r --cached -- problems
 </span></span></code></pre></div><p>来把 problems 整个目录从版本仓库和暂存区删除,problems 的状态变成待加入暂存区的状态(工作区有一份),状态见图:</p><p><img src=/images/blogs/git_tips_1_3.png alt></p><p>这个时候,第一步用下面</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git commit --amend --no-edit
 </span></span></code></pre></div><p>这个命令把 problems 从第一个提交中剔除</p><p>第二步就是常规的 add & comit 了</p><p>最终效果:</p><p><img src=/images/blogs/git_tips_1_4.png alt></p></content><p><a href=https://happybot.github.io/tags/git/>#Git</a>
 <a href=https://happybot.github.io/tags/tech/>#Tech</a></p><div class=toc><nav id=TableOfContents></nav></div></main><footer>Copyright © 2025, Jerry Xiong.</footer></body></html>

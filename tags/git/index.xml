@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 不确定</title><link>https://happybot.github.io/tags/git/</link><description>Recent content in Git on 不确定</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2025, Jerry Xiong.</copyright><lastBuildDate>Tue, 13 May 2025 21:17:55 +0800</lastBuildDate><atom:link href="https://happybot.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>git提交历史整理</title><link>https://happybot.github.io/blog/git_tips_1_clean_up/</link><pubDate>Tue, 13 May 2025 21:17:55 +0800</pubDate><guid>https://happybot.github.io/blog/git_tips_1_clean_up/</guid><description>&lt;p>最近 CLion 对非商业使用免费了.在 cursor 的帮助下, 做了个 CLion 环境下(用 CMAK 管理) leetcode c 语言的题解框架 自用.&lt;/p>
 &lt;p>边做边摸索,今天大致成型.回头看到太多临时和凌乱的提交,想整理一把.&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_1.png" alt="">&lt;/p>
-&lt;p>第一步是备份,git 的分支是零成本的,所以搞一个备份分支.注意我们这里是搞分支,不是切分支,不要无脑 checkout -b,用 branch 命令够了.&lt;/p>
+&lt;p>首先是备份. git 的分支是零成本的,所以搞一个备份分支.注意我们这里是搞分支,不是切分支,不要无脑 checkout -b,用 branch 命令够了.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git branch masterarchive20250513
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>接着把大量的混乱提交全部干掉,压缩到一个提交里面&lt;/p>
 &lt;p>使用一个凶残的命令&lt;/p>
@@ -20,9 +20,9 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git rm -r --cached -- problems
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来把 problems 整个目录从版本仓库和暂存区删除,problems 的状态变成待加入暂存区的状态(工作区有一份),状态见图:&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_3.png" alt="">&lt;/p>
-&lt;p>这个时候,第一步用&lt;/p>
+&lt;p>这个时候,第一步用下面&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git commit --amend --no-edit
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>方式把 problems 从第一个提交中剔除&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这个命令把 problems 从第一个提交中剔除&lt;/p>
 &lt;p>第二步就是常规的 add &amp;amp; comit 了&lt;/p>
 &lt;p>最终效果:&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_4.png" alt="">&lt;/p></description></item></channel></rss>

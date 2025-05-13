@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on 不确定</title><link>https://happybot.github.io/blog/</link><description>Recent content in Blogs on 不确定</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2025, Jerry Xiong.</copyright><lastBuildDate>Tue, 13 May 2025 21:17:55 +0800</lastBuildDate><atom:link href="https://happybot.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>git提交历史整理</title><link>https://happybot.github.io/blog/git_tips_1_clean_up/</link><pubDate>Tue, 13 May 2025 21:17:55 +0800</pubDate><guid>https://happybot.github.io/blog/git_tips_1_clean_up/</guid><description>&lt;p>最近 CLion 对非商业使用免费了.在 cursor 的帮助下, 做了个 CLion 环境下(用 CMAK 管理) leetcode c 语言的题解框架 自用.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on 不确定</title><link>https://happybot.github.io/tags/tech/</link><description>Recent content in Tech on 不确定</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2025, Jerry Xiong.</copyright><lastBuildDate>Tue, 13 May 2025 21:17:55 +0800</lastBuildDate><atom:link href="https://happybot.github.io/tags/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>git提交历史整理</title><link>https://happybot.github.io/blog/git_tips_1_clean_up/</link><pubDate>Tue, 13 May 2025 21:17:55 +0800</pubDate><guid>https://happybot.github.io/blog/git_tips_1_clean_up/</guid><description>&lt;p>最近 CLion 对非商业使用免费了.在 cursor 的帮助下, 做了个 CLion 环境下(用 CMAK 管理) leetcode c 语言的题解框架 自用.&lt;/p>
 &lt;p>边做边摸索,今天大致成型.回头看到太多临时和凌乱的提交,想整理一把.&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_1.png" alt="">&lt;/p>
 &lt;p>第一步是备份,git 的分支是零成本的,所以搞一个备份分支.注意我们这里是搞分支,不是切分支,不要无脑 checkout -b,用 branch 命令够了.&lt;/p>
@@ -25,35 +25,4 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>方式把 problems 从第一个提交中剔除&lt;/p>
 &lt;p>第二步就是常规的 add &amp;amp; comit 了&lt;/p>
 &lt;p>最终效果:&lt;/p>
-&lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_4.png" alt="">&lt;/p></description></item><item><title>First Blog Post</title><link>https://happybot.github.io/blog/path/</link><pubDate>Fri, 09 May 2025 14:22:29 +0800</pubDate><guid>https://happybot.github.io/blog/path/</guid><description>&lt;p>人生的中途,即将开始盛极而衰,急转而下.这件常事让人有一种不尴不尬的尴尬.&lt;/p>
-&lt;p>卡在中缝是难受的.人生充满不确定性.像这样:&lt;/p>
-&lt;p>&lt;img src="https://happybot.github.io/images/blogs/b1_path.jpeg" alt="">&lt;/p>
-&lt;p>又或是从大道走到了羊肠小道,甚至是歧路,像周作人描述过的这样:&lt;/p>
-&lt;!-- &lt;table>&lt;tr>
-&lt;td>&lt;img src="https://happybot.github.io/images/blogs/b2_path.png" border=0>&lt;/td>
-&lt;td>&lt;img src="https://happybot.github.io/images/blogs/b3_path.png" border=0>&lt;/td>
-&lt;/tr>&lt;/table> -->
-&lt;!-- | | |
-| ------------------------------------- | ------------------------------------- |
-| &lt;img src="https://happybot.github.io/images/blogs/b2_path.png"> | &lt;img src="https://happybot.github.io/images/blogs/b3_path.png"> | -->
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>&lt;/th>
- &lt;th>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;img src="https://happybot.github.io/images/blogs/b2_path.png" alt="">&lt;/td>
- &lt;td>&lt;img src="https://happybot.github.io/images/blogs/b3_path.png">&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;p>00 后,居里夫人学生,华罗庚的老师,王维克,在人生的中途,翻译了但丁的名著《神曲》,恰巧这本书但丁也写于人生的中途.王维克在序言中写到:&lt;/p>
-&lt;p>&lt;img src="https://happybot.github.io/images/blogs/b4_path.png" alt="">&lt;/p>
-&lt;p>又或者,既然大家都痛苦焦虑,那就没啥好痛苦焦虑的了.&lt;/p>
-&lt;p>人生中途,我也经历了很多变化.比如新上海人在上海呆不下去,滚回到老家谋生.日久他乡为故乡,回老家,格格不入的感觉反而更加强烈,在曾经无比熟悉的场域中,有一种手脚都不知道往那放的感觉.&lt;/p>
-&lt;p>让人有一种不尴不尬的尴尬.&lt;/p>
-&lt;p>情绪翻涌,勾起了十几年前还年轻时想要表达些什么的欲望.&lt;/p>
-&lt;p>以上,即为此新博客的源起.&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_4.png" alt="">&lt;/p></description></item></channel></rss>

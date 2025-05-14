@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小石头的自留地 on 不确定</title><link>https://happybot.github.io/</link><description>Recent content in 小石头的自留地 on 不确定</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2025, Jerry Xiong.</copyright><lastBuildDate>Tue, 13 May 2025 21:17:55 +0800</lastBuildDate><atom:link href="https://happybot.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>git提交历史整理</title><link>https://happybot.github.io/blog/git_tips_1_clean_up/</link><pubDate>Tue, 13 May 2025 21:17:55 +0800</pubDate><guid>https://happybot.github.io/blog/git_tips_1_clean_up/</guid><description>&lt;p>最近 CLion 对非商业使用免费了.在 cursor 的帮助下, 做了个 CLion 环境下(用 CMAK 管理) leetcode c 语言的题解框架 自用.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小石头的自留地 on 不确定</title><link>https://happybot.github.io/</link><description>Recent content in 小石头的自留地 on 不确定</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2025, Jerry Xiong.</copyright><lastBuildDate>Wed, 14 May 2025 13:18:07 +0800</lastBuildDate><atom:link href="https://happybot.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>代码块标签测试页面</title><link>https://happybot.github.io/code-blocks-test/</link><pubDate>Wed, 14 May 2025 13:18:07 +0800</pubDate><guid>https://happybot.github.io/code-blocks-test/</guid><description>&lt;p>参考文章:《Labeling Code Blocks in Hugo》 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。&lt;/p>
+&lt;p>在hugo下给代码块加上了标签，显示代码块所使用的语言或者代码的文件名&lt;/p>
+&lt;h3 id="不带语言标签和标题标签的代码块示例">不带语言标签和标题标签的代码块示例：&lt;/h3>
+&lt;figure class="highlight code-block">
+ &lt;pre tabindex="0">&lt;code class="language-" data-lang="">&amp;lt;div class=&amp;#34;terminal&amp;#34;&amp;gt;
+ {{ .Inner }}
+&amp;lt;/div&amp;gt;&lt;/code>&lt;/pre>
+&lt;/figure> &lt;h3 id="带有编程语言名标签的代码块示例">带有编程语言名标签的代码块示例:&lt;/h3>
+&lt;figure class="highlight code-block">
+ &lt;figcaption class="code-label">
+ &lt;span class="lang-name">javascript&lt;/span> 
+ &lt;/figcaption>
+ &lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">function&lt;/span> sayHello() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#a31515">&amp;#34;Hello, World!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/figure> &lt;h3 id="带有文件名标签的代码块示例">带有文件名标签的代码块示例：&lt;/h3>
+&lt;figure class="highlight code-block">
+ &lt;figcaption class="code-label">&lt;span class="file-name">hello.py&lt;/span> &lt;/figcaption>
+ &lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">def&lt;/span> greet(name):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">return&lt;/span> &lt;span style="color:#a31515">f&lt;/span>&lt;span style="color:#a31515">&amp;#34;Hello, &lt;/span>&lt;span style="color:#a31515">{&lt;/span>name&lt;span style="color:#a31515">}&lt;/span>&lt;span style="color:#a31515">!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">if&lt;/span> __name__ == &lt;span style="color:#a31515">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(greet(&lt;span style="color:#a31515">&amp;#34;World&amp;#34;&lt;/span>))&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/figure> &lt;h3 id="下面是一个带有描述的代码块示例">下面是一个带有描述的代码块示例：&lt;/h3>
+&lt;!-- verbatim参数用于控制代码块标题的显示样式和解析方式。这个参数名来源于英文单词"verbatim"，意为"逐字的"、"原样的"。
+具体作用：
+当verbatim = true（默认值）时：
+标题会被视为文件名
+使用.file-name样式类（深灰/黑色背景）
+标题内容按原样显示，不会被解析为Markdown
+当verbatim = false时：
+标题会被视为代码描述
+使用.code-desc样式类（蓝色背景）
+标题内容会被解析为Markdown格式（通过markdownify函数） -->
+&lt;figure class="highlight code-block">
+ &lt;figcaption class="code-label">&lt;span class="code-desc">安装依赖的命令&lt;/span> &lt;/figcaption>
+ &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/figure> &lt;h3 id="支持markdown的描述标签">支持Markdown的描述标签&lt;/h3>
+&lt;figure class="highlight code-block">
+ &lt;figcaption class="code-label">&lt;span class="code-desc">为&lt;strong>代码块&lt;/strong>添加&lt;em>样式&lt;/em>&lt;/span> &lt;/figcaption>
+ &lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#2b91af">code-block&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">margin&lt;/span>: 1&lt;span style="color:#2b91af">em&lt;/span> 0;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">padding&lt;/span>: 1&lt;span style="color:#2b91af">em&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">background&lt;/span>: #f5f5f5;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/figure> &lt;h3 id="结论">结论&lt;/h3>
+&lt;p>通过使用代码块标签功能，我们可以更清晰地展示代码，使读者能够更好地理解代码的上下文和用途。这个功能特别适合用于技术博客和教程。&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>&lt;a href="https://write.rog.gr/writing/labeling-code-blocks-in-hugo/">https://write.rog.gr/writing/labeling-code-blocks-in-hugo/&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>git提交历史整理</title><link>https://happybot.github.io/blog/git_tips_1_clean_up/</link><pubDate>Tue, 13 May 2025 21:17:55 +0800</pubDate><guid>https://happybot.github.io/blog/git_tips_1_clean_up/</guid><description>&lt;p>最近 CLion 对非商业使用免费了.在 cursor 的帮助下, 做了个 CLion 环境下(用 CMAK 管理) leetcode c 语言的题解框架 自用.&lt;/p>
 &lt;p>边做边摸索,今天大致成型.回头看到太多临时和凌乱的提交,想整理一把.&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_1.png" alt="">&lt;/p>
 &lt;p>首先是备份. git 的分支是零成本的,所以搞一个备份分支.注意我们这里是搞分支,不是切分支,不要无脑 checkout -b,用 branch 命令够了.&lt;/p>

@@ -2,27 +2,38 @@
 &lt;p>边做边摸索,今天大致成型.回头看到太多临时和凌乱的提交,想整理一把.&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_1.png" alt="">&lt;/p>
 &lt;p>首先是备份. git 的分支是零成本的,所以搞一个备份分支.注意我们这里是搞分支,不是切分支,不要无脑 checkout -b,用 branch 命令够了.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git branch masterarchive20250513
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>接着把大量的混乱提交全部干掉,压缩到一个提交里面&lt;/p>
+&lt;div class="terminal">
+ 
+$ git branch masterarchive20250513
+
+&lt;/div>
+&lt;p>接着把大量的混乱提交全部干掉,压缩到一个提交里面&lt;/p>
 &lt;p>使用一个凶残的命令&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git rebase -i --root
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这个时候自动打开的编辑器(比如 vi),显示如下:&lt;/p>
+&lt;div class="terminal">
+ 
+$ git rebase -i --root
+
+&lt;/div>
+&lt;p>这个时候自动打开的编辑器(比如 vi),显示如下:&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_2.png" alt="">&lt;/p>
 &lt;p>除了保持第一行初始提交 pick 的状态不变,其他提交改成 s(squash)或者 f(fixup),这里我们删除掉所有的后续提交信息,选择用 f&lt;/p>
 &lt;p>vim 命令模式下输入&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> :2,$s/pick/f/g
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-vim" data-lang="vim">&lt;span style="display:flex;">&lt;span> :2,$s&lt;span style="color:#a31515">/pick/&lt;/span>f/g
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>将第二行开始的 pick 全部替换成 f.&lt;/p>
 &lt;p>wq 保存后退出,执行.&lt;/p>
 &lt;p>提交压缩成了一个.&lt;/p>
 &lt;p>接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.&lt;/p>
 &lt;p>因为目前代码仓库比较特殊,只有一个初始提交,所有常规 reset &amp;ndash;soft 等方法将不好使.&lt;/p>
 &lt;p>这个时候使用&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git rm -r --cached -- problems
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来把 problems 整个目录从版本仓库和暂存区删除,problems 的状态变成待加入暂存区的状态(工作区有一份),状态见图:&lt;/p>
+&lt;div class="terminal">
+ 
+$ git rm -r --cached -- problems
+
+&lt;/div>
+&lt;p>来把 problems 整个目录从版本仓库和暂存区删除,problems 的状态变成待加入暂存区的状态(工作区有一份),状态见图:&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_3.png" alt="">&lt;/p>
 &lt;p>这个时候,第一步用下面&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git commit --amend --no-edit
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这个命令把 problems 从第一个提交中剔除&lt;/p>
+&lt;p>这个命令把 problems 从第一个提交中剔除&lt;/p>
 &lt;p>第二步就是常规的 add &amp;amp; comit 了&lt;/p>
 &lt;p>最终效果:&lt;/p>
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_4.png" alt="">&lt;/p></description></item></channel></rss>

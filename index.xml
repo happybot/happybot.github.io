@@ -18,8 +18,12 @@ $ git rebase -i --root
 &lt;p>&lt;img src="https://happybot.github.io/images/blogs/git_tips_1_2.png" alt="">&lt;/p>
 &lt;p>除了保持第一行初始提交 pick 的状态不变,其他提交改成 s(squash)或者 f(fixup),这里我们删除掉所有的后续提交信息,选择用 f&lt;/p>
 &lt;p>vim 命令模式下输入&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-vim" data-lang="vim">&lt;span style="display:flex;">&lt;span> :2,$s&lt;span style="color:#a31515">/pick/&lt;/span>f/g
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>将第二行开始的 pick 全部替换成 f.&lt;/p>
+&lt;figure class="highlight code-block">
+ &lt;figcaption class="code-label">
+ &lt;span class="lang-name">vim&lt;/span> 
+ &lt;/figcaption>
+ &lt;pre tabindex="0" class="chroma">&lt;code class="language-vim" data-lang="vim">&lt;span style="display:flex;">&lt;span> :2,$s&lt;span style="color:#a31515">/pick/&lt;/span>f/g&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/figure> &lt;p>将第二行开始的 pick 全部替换成 f.&lt;/p>
 &lt;p>wq 保存后退出,执行.&lt;/p>
 &lt;p>提交压缩成了一个.&lt;/p>
 &lt;p>接着要将一个提交拆成两个,第一个提交为框架的代码,第二个为示例题解的代码.从第一个图上,我们知道示例题解程序代码放在 problems 下.&lt;/p>

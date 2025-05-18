@@ -43,6 +43,23 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">padding&lt;/span>: 1&lt;span style="color:#2b91af">em&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">background&lt;/span>: #f5f5f5;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/figure> &lt;figure class="highlight code-block dark-mode">
+ &lt;figcaption class="code-label">
+ &lt;span class="lang-name">python&lt;/span> 
+ &lt;/figcaption>
+ &lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">def&lt;/span> hello():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#a31515">&amp;#34;Hello, World!&amp;#34;&lt;/span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
+&lt;/figure> &lt;figure class="highlight code-block dark-mode">
+ &lt;figcaption class="code-label">
+ &lt;span class="lang-name">python&lt;/span> 
+ &lt;/figcaption>
+ &lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">def&lt;/span> calculate_sum(a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># 这是一个简单的加法函数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result = a + b &lt;span style="color:#008000"># 计算两个数的和&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># 测试函数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(calculate_sum(5, 3)) &lt;span style="color:#008000"># 输出: 8&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>
 &lt;/figure> &lt;h3 id="结论">结论&lt;/h3>
 &lt;p>通过使用代码块标签功能，我们可以更清晰地展示代码，使读者能够更好地理解代码的上下文和用途。这个功能特别适合用于技术博客和教程。&lt;/p>
 &lt;div class="footnotes" role="doc-endnotes">
